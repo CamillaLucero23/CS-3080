@@ -12,8 +12,6 @@ def compareResponseAndAnswer(response, answer):
         return 0
     
 
-
-
 #initial boolean
 isAccessGranted = False
 
@@ -47,17 +45,25 @@ while isAccessGranted != True:
             for i in range(3):
                 #declare temp variable for if i is even or odd
                 tempEvenOrOdd = i%2
-                print("Is " + str(i+1) + " even or odd?")
+                print("Is " + str(i+1) + " even or odd? Enter e for ")
                 userResponse = input()
 
-                #Translate words into a comparable remainder
-                if (int(userResponse))
+                 #Translate words into a comparable remainder
+                if userResponse == "e":
+                    userResponse = 0
+                elif userResponse == "o":
+                    userResponse = 2
+                else:
+                    print("Entered Response was not an e or o!")
+                    break
 
                 #check if answer is correct. if so, continue, if not, break loop
                 isCorrectAnswer = compareResponseAndAnswer(userResponse, tempEvenOrOdd)
                 if isCorrectAnswer:
 
                     #question 6
+                    
+
 
             
     if isAccessGranted != True:

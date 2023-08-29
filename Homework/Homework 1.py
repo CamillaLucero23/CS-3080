@@ -10,6 +10,8 @@ def compareResponseAndAnswer(response, answer):
         return 1
     else:
         return 0
+    
+
 
 
 #initial boolean
@@ -32,16 +34,22 @@ while isAccessGranted != True:
     if isCorrectAnswer :
 
         #question 2 - counting letters
-        countingLettersWord = 'Archipelago'
+        countingLettersWord = 'Archipelago' #Answer is 11 incase I am dumb and forget :)
         print("Count and input the number of letters in this word: " + countingLettersWord)
         userResponse = input()
         
         #check if answer is correct. if so, continue, if not, break loop
         isCorrectAnswer = compareResponseAndAnswer(userResponse, len(countingLettersWord))
         if isCorrectAnswer:
-             
-    else: 
-        print("Answer incorrect. Please try again from the beginning.")
-        break
+
+            #question 3 - Evens and Odds Using a For Loop
+
+           
+    if isAccessGranted != True:
+        print("Your Answer was incorrect, please try again from the beginning.")
+        print("------------------------------------------------------------------------------------------")
+       
+  
+        
 
         

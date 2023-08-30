@@ -51,18 +51,19 @@ while isAccessGranted != True:
             correctAnswerCount = 0
             for i in range(3):
                 #declare temp variable for if i is even or odd
-                tempEvenOrOdd = (i+1)%2
-                print("Is " + str(i+1) + " even or odd? Enter e for even and o for odd")
+                tempEvenOrOdd = (i+randomInt1)%2
+                print("Is " + str(i+randomInt1) + " even or odd? Enter e for even and o for odd")
                 userResponse = input()
 
                  #Translate words into a comparable remainder
                 if userResponse == "e" or userResponse == "E":
                     userResponse = 0
-                elif tempEvenOrOdd != 0 and userResponse == "o" or userResponse == "O":
-                    userResponse = tempEvenOrOdd
-                elif userResponse != 0 or userResponse != tempEvenOrOdd:
+                elif userResponse == "o" or userResponse == "O":
+                    if tempEvenOrOdd != 0: # catch any wrong answers here! If user enters odd, when a number is even, make sure
+                        userResponse = tempEvenOrOdd# set user response = to remainder if correct odd answer to pass correct check
+                else :
                     print("Entered Response was not an e or o!")
-                    break
+                    break # break loop if not e or o
 
                 #check if answer is correct. if so, continue, if not, break loop
                 isCorrectAnswer = compareResponseAndAnswer(userResponse, tempEvenOrOdd)
@@ -71,8 +72,8 @@ while isAccessGranted != True:
                     
                     #if answered 3 correct answer, exit from for
                     if correctAnswerCount == 3:
-                        break
-                else:
+                        break 
+                else: 
                     break
 
             if correctAnswerCount == 3:
@@ -90,11 +91,11 @@ while isAccessGranted != True:
                     if isCorrectAnswer:
                         isAccessGranted = True
                         continue
+    #if answer is incorrect, prompt and repeat
+    print("Your Answer was incorrect, please try again from the beginning.")
+    print("------------------------------------------------------------------------------------------")
                         
-        #if answer is incorrect, prompt and repeat
-        print("Your Answer was incorrect, please try again from the beginning.")
-        print("------------------------------------------------------------------------------------------")
-    
+       
 #access granted if all questions have been answered correctly
 print("------------------------------------------------------------------------------------------")
 print("Access Granted")

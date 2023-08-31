@@ -2,7 +2,8 @@
 Homework 1
 Camilla Lucero
 8/28/2023
-Program Desc. : 
+Program Desc. : A security program that asks a series of 6 questions over 6 different topics. Reveals a secret
+link a the end of the program once all questions are answered correctly. 
 '''
 
 #compares two values and returns a 1 if they are the same and 0 if they are not
@@ -98,7 +99,7 @@ while isAccessGranted != True:
        
 #access granted if all questions have been answered correctly
 print("------------------------------------------------------------------------------------------")
-print("Access Granted")
+print("Access Granted\nhttps://youtu.be/YRvOePz2OqQ?si=9litG05c7R0i9OCD\n(It's just Maxwell the Cat :D)\n")
   
         
 

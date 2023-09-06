@@ -100,7 +100,4 @@ while isAccessGranted != True:
 #access granted if all questions have been answered correctly
 print("------------------------------------------------------------------------------------------")
 print("Access Granted\nhttps://youtu.be/YRvOePz2OqQ?si=9litG05c7R0i9OCD\n(It's just Maxwell the Cat :D)\n")
-  
-        
-
-        
+    

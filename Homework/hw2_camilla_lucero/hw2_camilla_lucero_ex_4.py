@@ -51,7 +51,7 @@ print("I'm thinking of a number between " +str(lower) + " and " + str(upper) + "
 
 #boolean flag & guess counter
 isGuess = False
-guessCounter = 0
+guessCounter = 1
 
 #while number hasn't been guessed and the guess counter is not 10
 while guessCounter != numberOfGuesses and isGuess == False:

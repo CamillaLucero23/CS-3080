@@ -28,66 +28,57 @@ def displayBoard(ticTacToe):
             print("---------------------------")  
 
 
-def getValidInput(inputOptions):
+def getValidInput():
 
     userInput = " "
     isCorrect = False
+    attempts = 1
 
 
-    while (isCorrect != True):
+    while (attempts < 2):
 
-        print("Input Options: ")
-        for i in range(len (inputOptions)):
-             print(inputOptions[i], end= ", ")
+        userInput = str(input())
+        isNum = userInput.isalnum
 
-        print()
-
-
-        userInput = input()
-        userInput = userInput.lower()
-        isAlpha = userInput.isalpha()
-
-        if isAlpha == False :
-            print("Please Enter A String")
-
+        if isNum == False:
+            print("Please Enter A Number.")
+        
+        elif userInput != 1 or userInput != 2 or userInput != 3:
+            print("Please Enter A Valid Coordinant")
+        
         else:
+            if attempts >= 2:
+                isCorrect = True
+            
+            attempts += 1
 
-            for i in range(len(inputOptions)):
-
-                if userInput == inputOptions:
-                    isCorrect = True
-
-            if isCorrect != True:
-
-                print("Please Enter A Valid String")
-                
-
-       
+        
     return userInput
 
 
 def playerTurn(ticTacToe, player, where):
 
-    characterToPlace = 'c'
+    characterToPlace = ' '
 
     if player == 1:
         characterToPlace = 'X'
     else:
         characterToPlace = 'O'
 
+
+
+
     
 ticTacToe = [[" ", " ", " "],
              [" ", " ", " "],
              [" ", " ", " "]]
 
-inputOptions = ("top left", "top middle", "top right", "middle left",
-                 "middle middle", "middle right", "bottom left",
-                   "bottom middle", "bottom right")
-
 whichPlayer = 1
 
 for i in range(9):
     displayBoard(ticTacToe)
+
+    print("Enter a coordinant, like 2 2 for the middle spot...")
    
     if(whichPlayer == 1):
         print("Player 1's turn: ")
@@ -98,6 +89,6 @@ for i in range(9):
     
         whichPlayer = 1
     
-    userInput = getValidInput(inputOptions)
+    userInput = getValidInput()
 
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")

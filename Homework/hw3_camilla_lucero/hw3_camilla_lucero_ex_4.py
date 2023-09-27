@@ -3,9 +3,10 @@ Homework 3, Exercise 4
 Camilla Lucero
 9/25/2023
 
-This program 
+This program simulates a semi-functioning tictactoe game. It can be noted that
+this game does allow spots to be overrided and does not check for who wins!
 '''
-
+#displays tictacboard, parameters- listed lists
 def displayBoard(ticTacToe):
     
     gridRows = len(ticTacToe)
@@ -28,58 +29,69 @@ def displayBoard(ticTacToe):
             print("---------------------------")  
 
 
-def getValidInput():
+#gets valid integer input between 1 and 3
+def getValidInt():
 
+    #initialize return value and bool flag
     userInput = " "
     isCorrect = False
-    attempts = 1
 
+    #while we dont have a valid value
+    while (isCorrect == False):
 
-    while (attempts < 2):
-
-        userInput = str(input())
-        isNum = userInput.isalnum
-
-        if isNum == False:
-            print("Please Enter A Number.")
+        #try to get integer, and print error if input is not integer
+        try:
+            userInput = int(input())
+        except ValueError:
+            print("Pleast Enter An Integer")  
         
-        elif userInput != 1 or userInput != 2 or userInput != 3:
-            print("Please Enter A Valid Coordinant")
-        
-        else:
-            if attempts >= 2:
+        #if int, then check if number is between 1 and 3
+        if str(userInput).isnumeric() == True :
+            if userInput < 1 or userInput > 3:
+                print("Please Enter A Valid Coordinant")
+            else:
                 isCorrect = True
-            
-            attempts += 1
 
-        
     return userInput
 
 
-def playerTurn(ticTacToe, player, where):
+#executes a player turn, parameters- listed list for board, the current player, and a list with coordinants
+def playerTurn(ticTacToe, player, coordinants):
 
     characterToPlace = ' '
 
+    #determine which character is placed
     if player == 1:
         characterToPlace = 'X'
     else:
         characterToPlace = 'O'
 
-
-
-
+    #subtract 1 from coordiants and place
+    coordinant1 = coordinants[0] - 1
+    coordinant2 = coordinants[1] -1 
     
+    ticTacToe[coordinant1][coordinant2] = characterToPlace
+
+
+#tictacetoe list
 ticTacToe = [[" ", " ", " "],
              [" ", " ", " "],
              [" ", " ", " "]]
 
+#determines which player plays first
 whichPlayer = 1
 
+#complete a 9 round game
 for i in range(9):
+
+    #display board
     displayBoard(ticTacToe)
 
-    print("Enter a coordinant, like 2 2 for the middle spot...")
-   
+    #initialize coordinants
+    coordinants = [0,0]
+    
+    print("Enter a coordinant, like 3 [enter] 2 for the bottom middle spot...")
+    #determine which player is playing 
     if(whichPlayer == 1):
         print("Player 1's turn: ")
 
@@ -89,6 +101,11 @@ for i in range(9):
     
         whichPlayer = 1
     
-    userInput = getValidInput()
+    #get coordinants
+    for i in range(2):
+        coordinants[i] = getValidInt()
 
+    #play player's turn
+    playerTurn(ticTacToe, whichPlayer, coordinants)
+    
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")

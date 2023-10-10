@@ -4,7 +4,7 @@ Camilla Lucero
 9/25/2023
 
 This program simulates a semi-functioning tictactoe game. It can be noted that
-this game does allow spots to be overrided and does not check for who wins!
+this game does allow spots to be overridden and does not check for who wins!
 '''
 #displays tictacboard, parameters- listed lists
 def displayBoard(ticTacToe):

@@ -12,6 +12,7 @@ string = "The quick brown fox jumps over the lazy dog"
 #dictionary for letter occurences
 letterOccurences = {}
 
+
 for i in range(len(string)):
     #get one letter from string
     currentLetter = string[i]
@@ -24,6 +25,7 @@ for i in range(len(string)):
     else:
         #if in dictionary, iterate
         letterOccurences[currentLetter] += 1
+
 
 #import pretty print
 import pprint

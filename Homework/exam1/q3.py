@@ -9,17 +9,9 @@ from random import randint
 randomLower = 1
 randomUpper = 7
 n = randint(randomLower,randomUpper)
-nonEvenSquares = []
-x = 1
-
-while len(nonEvenSquares) != n:
-    temp = x**2
-    if temp%2 != 0:
-        nonEvenSquares.append(temp)
-    
-    x+=1
+nonEvenSquares = [x**2 for x in range(100) if x%2 != 0]
 
 print("n is " + str(n))
 print("The first " + str(n) + " square(s) that are not divisible by 2 are:")
-for i in range(len(nonEvenSquares)):
+for i in range(n):
     print(nonEvenSquares[i], end= " ")

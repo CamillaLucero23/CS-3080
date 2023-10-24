@@ -10,15 +10,15 @@ class ReverseIter:
 
     #initializer
     def __init__(self, list):
-        self.index = len(list) - 1 #Set "starting" index to the end of the object you are iterating
+        self.index = len(list) #Set "starting" index to the end of the object you are iterating
         self.list = list
 
     #iterator
-    def _iter_(self):
+    def __iter__(self):
         return self
     
     #define next
-    def _next_(self):
+    def __next__(self):
         #Check if we are at the beginning of the list
         if self.index != 0:
             currentObject = self.index
@@ -28,10 +28,13 @@ class ReverseIter:
         else:
             raise StopIteration() #if we are at index 0, then stop iteration
         
-    
-
+#define list to iterate
 iterationList = [1,2,3,4]
 
-currentIter = ReverseIter(iterationList)
+print("List to iterate: ", end= " ")
+print(iterationList, end= "\n------------------\n")
+
+print("Using an Iterator, iterate the list backwards....")
+iter = ReverseIter(iterationList)
 for i in range(len(iterationList) + 1):
-    print(str(next(currentIter)))
+    print(str(next(iter)))

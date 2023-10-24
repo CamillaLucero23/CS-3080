@@ -23,6 +23,7 @@ class ReverseIter:
         if self.index != 0:
             currentObject = self.index
             self.index -= 1 #If we aren't at beginning, then subtract one from the index
+            return currentObject
 
         else:
             raise StopIteration() #if we are at index 0, then stop iteration

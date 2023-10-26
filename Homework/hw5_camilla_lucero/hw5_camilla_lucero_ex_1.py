@@ -3,7 +3,7 @@ Homework 5, Exercise 1
 Camilla Lucero
 10/24/2023
 
-This program 
+This program uses an iterator to iterate through a list in reverse order (Last object to first)
 '''
 #define reverse iterator class
 class ReverseIter:
@@ -29,7 +29,7 @@ class ReverseIter:
             raise StopIteration() #if we are at index 0, then stop iteration
         
 #define list to iterate
-iterationList = [1,2,3,4]
+iterationList = [1,2,3,4,5,6,7,8,9,10]
 
 print("List to iterate: ", end= " ")
 print(iterationList, end= "\n------------------\n")

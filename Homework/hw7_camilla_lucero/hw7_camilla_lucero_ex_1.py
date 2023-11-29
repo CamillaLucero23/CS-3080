@@ -33,7 +33,8 @@ slowDownTimer = 3 # this is where you change the rate!
 if slowDownTimer < 1:
     slowDownTimer = 1
 
-@slowDown (rate=slowDownTimer)
+#slowDown function, taken from lecture!
+@slowDown (rate=slowDownTimer) #set the rate we would like for the function to sleep before executing
 def countdown(fromNumber):
     if fromNumber < 1:
         print("Liftoff!")
